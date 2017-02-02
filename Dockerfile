@@ -6,6 +6,8 @@ RUN mkdir /opt/app
 RUN mkdir /opt/app/NodeNewRelicDemo
 WORKDIR /opt/app/NodeNewRelicDemo
 
+
 COPY /opt/app/NodeNewRelicDemo /opt/app/NodeNewRelicDemo
+
 
 CMD ['npm','run','start']
