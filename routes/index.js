@@ -6,4 +6,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+/* Health CHeck */
+router.get('/ping', function(req, res, next) {
+  res.send('pong');
+});
+
 module.exports = router;
