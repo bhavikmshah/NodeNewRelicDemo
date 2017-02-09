@@ -1,5 +1,2 @@
-*
-!build
-!docker
-!Dockerfile
+node_modules
 

@@ -7,7 +7,7 @@ RUN mkdir /opt/app/NodeNewRelicDemo
 WORKDIR /opt/app/NodeNewRelicDemo
 
 
-COPY /opt/app/NodeNewRelicDemo /opt/app/NodeNewRelicDemo
+COPY . /opt/app/NodeNewRelicDemo
 
 WORKDIR /opt/app/DropWizardExample
 RUN apt-get -qq update
@@ -18,6 +18,7 @@ RUN curl -s https://download.dataloop.io/pubkey.gpg | apt-key add -
 RUN apt-get install apt-transport-https ca-certificates -y
 RUN echo 'deb https://download.dataloop.io/deb/ stable main' > /etc/apt/sources.list.d/dataloop.list
 
-RUN apt-get update && apt-get install dataloop-agent -y.
+RUN apt-get update && apt-get install dataloop-agent -y
+RUN npm install
 COPY agent.yaml /etc/dataloop/agent.yaml
 CMD service dataloop-agent start && npm run start
